@@ -1,0 +1,54 @@
+﻿
+@model List<Products.Models.Product>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List Of Products</h2>
+<br />
+
+@Html.ActionLink("Insert New Product", "Create", new { name = "" }, new { @class = "btn btn-success" })
+<br />
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(x => x.FirstOrDefault().BrandName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.FirstOrDefault().ModelNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.FirstOrDefault().Description)
+        </th>
+        <th>
+            Modify
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @item.BrandName
+        </td>
+
+
+
+        <td>
+            @item.ModelNo
+        </td>
+
+
+
+        <td>
+            @item.Description
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id },new { @class = "btn btn-warning"})
+            @Html.ActionLink("Delete", "Delete", new { code = item.Id }, new { @class = "btn btn-danger" })
+        </td>
+
+    </tr>
+    }
+</table>
