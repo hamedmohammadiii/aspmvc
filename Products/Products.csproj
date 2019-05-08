@@ -122,8 +122,13 @@
     <Compile Include="Migrations\201904241122162_000-init.Designer.cs">
       <DependentUpon>201904241122162_000-init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905011105495_type.cs" />
+    <Compile Include="Migrations\201905011105495_type.Designer.cs">
+      <DependentUpon>201905011105495_type.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Type.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -149,6 +154,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201904241122162_000-init.resx">
       <DependentUpon>201904241122162_000-init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905011105495_type.resx">
+      <DependentUpon>201905011105495_type.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

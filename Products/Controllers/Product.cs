@@ -26,6 +26,9 @@ namespace Products.Controllers
         [HttpGet]
         public ActionResult Create()
         {
+            var Types = db.Types.ToList();
+            var selectlist = new SelectList(Types, "Id", "Caption");
+            ViewBag.Types = selectlist;
             return View();
         }
 
@@ -66,6 +69,7 @@ namespace Products.Controllers
         public ActionResult Edit(int Id)
         {
             var entity = db.Products.Find(Id);
+           
 
             if (entity == null)
             {
@@ -73,13 +77,18 @@ namespace Products.Controllers
                 return RedirectToAction("Index");
             }
 
+            var Types = db.Types.ToList();
+            var selectlist = new SelectList(Types, "Id", "Caption");
+            ViewBag.Types = selectlist;
             return View(entity);
         }
 
         [HttpPost]
         public ActionResult Edit(Product entity)
         {
-           
+            var Types = db.Types.ToList();
+            var selectlist = new SelectList(Types, "Id", "Caption");
+            ViewBag.Types = selectlist;
 
             db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
 

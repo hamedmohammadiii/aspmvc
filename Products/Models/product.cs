@@ -17,5 +17,9 @@ namespace Products.Models
         public string ModelNo { get; set; }
         [Display(Name = "Description")]
         public string Description { get; set; }
+        [Display(Name = "Type")]
+        public int? TypeId { get; set; }
+        public virtual ProductType Type { get; set; }
+        
     }
 }

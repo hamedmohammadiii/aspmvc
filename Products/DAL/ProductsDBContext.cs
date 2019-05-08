@@ -19,6 +19,7 @@ namespace Products.DAL
         }
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<ProductType> Types { get; set; }
         
     }
 }

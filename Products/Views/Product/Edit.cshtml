@@ -28,7 +28,13 @@
         @Html.TextBoxFor(x => x.Description, null, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.Description)
     </div>
-    
+    <br />
+    <div>
+        @Html.DisplayNameFor(x => x.TypeId)
+        @Html.DropDownListFor(x => x.TypeId, (SelectList)ViewBag.Types, "Choose...", new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.TypeId)
+    </div>
+
     <br />
     <div class="form-group">
         <input type="submit" value="Save" class="btn btn-success" />

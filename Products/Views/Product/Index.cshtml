@@ -22,8 +22,12 @@
             @Html.DisplayNameFor(x => x.FirstOrDefault().Description)
         </th>
         <th>
+            @Html.DisplayNameFor(x => x.FirstOrDefault().TypeId)
+        </th>
+        <th>
             Modify
         </th>
+
     </tr>
     @foreach (var item in Model)
     {
@@ -45,7 +49,11 @@
         </td>
 
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.Id },new { @class = "btn btn-warning"})
+            @item.Type.Caption
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning" })
             @Html.ActionLink("Delete", "Delete", new { code = item.Id }, new { @class = "btn btn-danger" })
         </td>
 
