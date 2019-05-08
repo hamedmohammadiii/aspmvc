@@ -113,5 +113,11 @@ namespace Products.Controllers
             return RedirectToAction("Index");
 
         }
+
+        public ActionResult TypesPartial()
+        {
+            var types = db.Types.ToList();
+            return PartialView(types);
+        }
     }
 }

@@ -10,53 +10,62 @@
 @Html.ActionLink("Insert New Product", "Create", new { name = "" }, new { @class = "btn btn-success" })
 <br />
 <br />
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(x => x.FirstOrDefault().BrandName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(x => x.FirstOrDefault().ModelNo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(x => x.FirstOrDefault().Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(x => x.FirstOrDefault().TypeId)
-        </th>
-        <th>
-            Modify
-        </th>
 
-    </tr>
-    @foreach (var item in Model)
-    {
-    <tr>
-        <td>
-            @item.BrandName
-        </td>
+<div class="col-lg-8 pull-left">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(x => x.FirstOrDefault().BrandName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(x => x.FirstOrDefault().ModelNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(x => x.FirstOrDefault().Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(x => x.FirstOrDefault().TypeId)
+            </th>
+            <th>
+                Modify
+            </th>
 
-
-
-        <td>
-            @item.ModelNo
-        </td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.BrandName
+                </td>
 
 
 
-        <td>
-            @item.Description
-        </td>
+                <td>
+                    @item.ModelNo
+                </td>
 
-        <td>
-            @item.Type.Caption
-        </td>
 
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning" })
-            @Html.ActionLink("Delete", "Delete", new { code = item.Id }, new { @class = "btn btn-danger" })
-        </td>
 
-    </tr>
+                <td>
+                    @item.Description
+                </td>
+
+                <td>
+                    @item.Type.Caption
+                </td>
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning" })
+                    @Html.ActionLink("Delete", "Delete", new { code = item.Id }, new { @class = "btn btn-danger" })
+                </td>
+
+            </tr>
+        }
+    </table>
+</div>
+
+<div class="col-lg-2" style="border: 2px solid #ccc; border-radius:5px; margin-left:100px;">
+    @{ 
+        Html.RenderAction("TypesPartial");
     }
-</table>
+</div>
